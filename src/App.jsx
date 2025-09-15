@@ -1,19 +1,27 @@
 import Empleados from './components/Empleados';
 import CrearEmpleado from './components/CrearEmpleado';
 import Empresa from './components/Empresa';
-import Departamento from './components/Departamento';
 import CrearEmpresa from './components/CrearEmpresa';
+import Departamento from './components/Departamento';
 import CrearDepartamento from './components/CrearDepartamento';
+import Home from './components/Home';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
     <div>
-      <Empresa />
-      <CrearEmpresa />
-      <Departamento />
-      <CrearDepartamento />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/empresa" element={<Empresa />} />
+          <Route path="/crear-empresa" element={<CrearEmpresa />} />
+          <Route path="/empleados" element={<Empleados />} />
+          <Route path="/crear-empleado" element={<CrearEmpleado />} />
+          <Route path="/departamento" element={<Departamento />} />
+          <Route path="/crear-departamento" element={<CrearDepartamento />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
-
 export default App;

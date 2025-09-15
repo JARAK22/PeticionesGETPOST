@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import NavBar from './NavBar';
 
 function CrearEmpresa() {
 
@@ -19,13 +20,14 @@ function CrearEmpresa() {
                 apiKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNrb2pyeWF4YnF1cXR3dnV5aGZ2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTc1MTQ0MTUsImV4cCI6MjA3MzA5MDQxNX0.nZMSWKNIve_UmSe1KEehy9ocL2FIR25QflnccDRQ998',
                 Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNrb2pyeWF4YnF1cXR3dnV5aGZ2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTc1MTQ0MTUsImV4cCI6MjA3MzA5MDQxNX0.nZMSWKNIve_UmSe1KEehy9ocL2FIR25QflnccDRQ998'
             },
-            body: JSON.stringify({nombre: empresa.nombre, nit: empresa.nit, direccion: empresa.direccion, telefono: empresa.telefono, fecha_creacion: empresa.fecha_creacion})
+            body: JSON.stringify({ nombre: empresa.nombre, nit: empresa.nit, direccion: empresa.direccion, telefono: empresa.telefono, fecha_creacion: empresa.fecha_creacion })
         })
     }
 
     return (
         <div className="container-crear-empleado">
-            <h1>CREAR DEPARTAMENTO</h1>
+            <NavBar />
+            <h1>CREAR EMPRESA</h1>
             <form onSubmit={handleSubmit} className="form-crear-empleado">
                 <label htmlFor="nombre">Nombre</label>
                 <input type="text" id="nombre" name="nombre" onChange={(e) => setEmpresa({ ...empresa, nombre: e.target.value })} />

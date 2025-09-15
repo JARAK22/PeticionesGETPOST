@@ -17,6 +17,7 @@ code {
   margin: 10px auto;
   padding: 2rem;
   border: 1px solid #e2e8f0;
+  margin-top: 50px;
 }
 
 .container-empleados h1 {
@@ -110,6 +111,7 @@ code {
   flex-direction: column;
   align-items: center;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  margin-top: 50px;
 }
 
 .container-crear-empleado h1 {

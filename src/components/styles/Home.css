@@ -1,0 +1,35 @@
+.container-home {
+    max-width: 1200px;
+    margin: 10px auto;
+    padding: 2rem;
+    border: 1px solid #e2e8f0;
+}
+
+.container-home h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.container-home p {
+    font-size: 1.25rem;
+    color: #4a5568;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .container-home {
+        padding: 1rem;
+    }
+
+    .container-home h1 {
+        font-size: 1.875rem;
+    }
+
+    .container-home p {
+        font-size: 1rem;
+    }
+}

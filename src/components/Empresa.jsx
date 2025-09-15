@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import NavBar from './NavBar';
 
 function Empresa() {
 
@@ -21,36 +22,37 @@ function Empresa() {
         console.log(id);
     }
     return (
-        <div className="container-empleados">
-            <h1>EMPPRESA</h1>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Nit</th>
-                        <th>Direccion</th>
-                        <th>Telefono</th>
-                        <th>Fecha creacion</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {empresa.map(empre => (
-                        <tr key={empre.id}>
-                            <td>{empre.nombre}</td>
-                            <td>{empre.nit}</td>
-                            <td>{empre.direccion}</td>
-                            <td>{empre.telefono}</td>
-                            <td>{empre.fecha_creacion}</td>
-                            <td>
-                                <button onClick={() => editarEmpleado(empre.id)} className='btn-editar'>Editar</button>
-                                <button onClick={() => eliminarEmpleado(empre.id)} className='btn-eliminar'>Eliminar</button>
-                            </td>
+            <div className="container-empleados">
+            <NavBar />
+                <h1>EMPPRESA</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Nit</th>
+                            <th>Direccion</th>
+                            <th>Telefono</th>
+                            <th>Fecha creacion</th>
+                            <th>Acciones</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
-        </div>
+                    </thead>
+                    <tbody>
+                        {empresa.map(empre => (
+                            <tr key={empre.id}>
+                                <td>{empre.nombre}</td>
+                                <td>{empre.nit}</td>
+                                <td>{empre.direccion}</td>
+                                <td>{empre.telefono}</td>
+                                <td>{empre.fecha_creacion}</td>
+                                <td>
+                                    <button onClick={() => editarEmpleado(empre.id)} className='btn-editar'>Editar</button>
+                                    <button onClick={() => eliminarEmpleado(empre.id)} className='btn-eliminar'>Eliminar</button>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
     );
 }
 

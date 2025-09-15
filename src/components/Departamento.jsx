@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import NavBar from './NavBar';
 
 function Departamento() {
 
@@ -21,32 +22,33 @@ function Departamento() {
         console.log(id);
     }
     return (
-        <div className="container-empleados">
-            <h1>DEPARTAMENTO</h1>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Descripcion</th>
-                        <th>Empresa_id</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {departamento.map(dep => (
-                        <tr key={dep.id}>
-                            <td>{dep.nombre}</td>
-                            <td>{dep.descripcion}</td>
-                            <td>{dep.empresa_id}</td>
-                            <td>
-                                <button onClick={() => editarEmpleado(empre.id)} className='btn-editar'>Editar</button>
-                                <button onClick={() => eliminarEmpleado(empre.id)} className='btn-eliminar'>Eliminar</button>
-                            </td>
+            <div className="container-empleados">
+            <NavBar />
+                <h1>DEPARTAMENTO</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Descripcion</th>
+                            <th>Empresa_id</th>
+                            <th>Acciones</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
-        </div>
+                    </thead>
+                    <tbody>
+                        {departamento.map(dep => (
+                            <tr key={dep.id}>
+                                <td>{dep.nombre}</td>
+                                <td>{dep.descripcion}</td>
+                                <td>{dep.empresa_id}</td>
+                                <td>
+                                    <button onClick={() => editarEmpleado(empre.id)} className='btn-editar'>Editar</button>
+                                    <button onClick={() => eliminarEmpleado(empre.id)} className='btn-eliminar'>Eliminar</button>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
     );
 }
 

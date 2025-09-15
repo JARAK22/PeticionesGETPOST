@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import NavBar from './NavBar';
 
 function Empleados() {
 
@@ -20,35 +21,37 @@ function Empleados() {
     const eliminarEmpleado = (id) => {
         console.log(id);
     }
+    
     return (
-        <div className="container-empleados">
-            <h1>EMPLEADOS</h1>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Cargo</th>
-                        <th>Salario</th>
-                        <th>Fecha Ingreso</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {empleados.map(empleado => (
-                        <tr key={empleado.id}>
-                            <td>{empleado.nombre}</td>
-                            <td>{empleado.cargo}</td>
-                            <td>{empleado.salario}</td>
-                            <td>{empleado.fecha_ingreso}</td>
-                            <td>
-                                <button onClick={() => editarEmpleado(empleado.id)} className='btn-editar'>Editar</button>
-                                <button onClick={() => eliminarEmpleado(empleado.id)} className='btn-eliminar'>Eliminar</button>
-                            </td>
+            <div className="container-empleados">
+                <NavBar />
+                <h1>EMPLEADOS</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Cargo</th>
+                            <th>Salario</th>
+                            <th>Fecha Ingreso</th>
+                            <th>Acciones</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
-        </div>
+                    </thead>
+                    <tbody>
+                        {empleados.map(empleado => (
+                            <tr key={empleado.id}>
+                                <td>{empleado.nombre}</td>
+                                <td>{empleado.cargo}</td>
+                                <td>{empleado.salario}</td>
+                                <td>{empleado.fecha_ingreso}</td>
+                                <td>
+                                    <button onClick={() => editarEmpleado(empleado.id)} className='btn-editar'>Editar</button>
+                                    <button onClick={() => eliminarEmpleado(empleado.id)} className='btn-eliminar'>Eliminar</button>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
     );
 }
 

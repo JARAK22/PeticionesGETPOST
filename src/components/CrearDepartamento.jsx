@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import NavBar from './NavBar';
 
 function CrearDepartamento() {
 
@@ -23,6 +24,7 @@ function CrearDepartamento() {
 
     return (
         <div className="container-crear-empleado">
+            <NavBar />
             <h1>CREAR DEPARTAMENTO</h1>
             <form onSubmit={handleSubmit} className="form-crear-empleado">
                 <label htmlFor="nombre">Nombre</label>
@@ -30,7 +32,7 @@ function CrearDepartamento() {
                 <label htmlFor="descripcion">Descripcion</label>
                 <input type="text" id="descripcion" name="descripcion" onChange={(e) => setDepartamento({ ...departamento, descripcion: e.target.value })} />
                 <label htmlFor="empresa_id">Empresa_id</label>
-                <input type="text" id="empresa_id" name="empresa_id" onChange={(e) => setDepartamento({ ...departamento, empresa_id: e.target.value})} />
+                <input type="text" id="empresa_id" name="empresa_id" onChange={(e) => setDepartamento({ ...departamento, empresa_id: e.target.value })} />
                 <button type="submit">Crear</button>
             </form>
         </div>
