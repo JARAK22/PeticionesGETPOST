@@ -14,18 +14,18 @@ function Empresa() {
         }).then(res => res.json()).then(data => setEmpresa(data));
     }, []);
 
-    const editarEmpleado = (id) => {
+    function editarEmpresa(id) {
         console.log(id);
     }
 
-    const eliminarEmpresa = (id) => {
-        fetch(`https://skojryaxbquqtwvuyhfv.supabase.co/rest/v1/empresa?id=eq.${id}`, {
+    async function eliminarEmpresa(id) {
+        await fetch(`https://skojryaxbquqtwvuyhfv.supabase.co/rest/v1/empresa?id=eq.${id}`, {
             method: 'DELETE',
             headers: {
                 apiKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNrb2pyeWF4YnF1cXR3dnV5aGZ2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTc1MTQ0MTUsImV4cCI6MjA3MzA5MDQxNX0.nZMSWKNIve_UmSe1KEehy9ocL2FIR25QflnccDRQ998',
                 Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNrb2pyeWF4YnF1cXR3dnV5aGZ2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTc1MTQ0MTUsImV4cCI6MjA3MzA5MDQxNX0.nZMSWKNIve_UmSe1KEehy9ocL2FIR25QflnccDRQ998'
             }
-        })
+        }).then(res => res.json()).then(data => setEmpresa(data));
     }
     return (
             <div className="container-empleados">
@@ -51,7 +51,7 @@ function Empresa() {
                                 <td>{empre.telefono}</td>
                                 <td>{empre.fecha_creacion}</td>
                                 <td>
-                                    <button onClick={() => editarEmpleado(empre.id)} className='btn-editar'>Editar</button>
+                                    <button onClick={() => editarEmpresa(empre.id)} className='btn-editar'>Editar</button>
                                     <button onClick={() => eliminarEmpresa(empre.id)} className='btn-eliminar'>Eliminar</button>
                                 </td>
                             </tr>
