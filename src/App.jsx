@@ -4,6 +4,7 @@ import Empresa from './components/Empresa';
 import CrearEmpresa from './components/CrearEmpresa';
 import Departamento from './components/Departamento';
 import CrearDepartamento from './components/CrearDepartamento';
+import ActualizarEmpleado from './components/ActualizarEmpleado';
 import Home from './components/Home';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -19,6 +20,7 @@ function App() {
           <Route path="/crear-empleado" element={<CrearEmpleado />} />
           <Route path="/departamento" element={<Departamento />} />
           <Route path="/crear-departamento" element={<CrearDepartamento />} />
+          <Route path="/actualizar-empleado/:id" element={<ActualizarEmpleado />} />
         </Routes>
       </Router>
     </div>
