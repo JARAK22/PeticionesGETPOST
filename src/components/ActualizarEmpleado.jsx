@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 import NavBar from "./NavBar"; 
 
 function ActulizarEmpleado() {
@@ -9,10 +10,11 @@ function ActulizarEmpleado() {
         salario: 0,
         fecha_ingreso: ''
     });
+    const { id } = useParams();
 
     async function actualizar(e) {
         e.preventDefault();
-        await fetch(`https://skojryaxbquqtwvuyhfv.supabase.co/rest/v1/empleados/${empleado.id}`, {
+        await fetch(`https://skojryaxbquqtwvuyhfv.supabase.co/rest/v1/empleados?id=eq.${id}`, {
             method: 'PATCH',
             headers: {
                 "content-type": "application/json",
