@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import NavBar from './NavBar';
 
 function Empresa() {
 
     const [empresa, setEmpresa] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch('https://skojryaxbquqtwvuyhfv.supabase.co/rest/v1/empresa?select=*', {
@@ -16,6 +18,7 @@ function Empresa() {
 
     function editarEmpresa(id) {
         console.log(id);
+        navigate(`/actualizar-empresa/${id}`);
     }
 
     async function eliminarEmpresa(id) {

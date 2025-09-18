@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import NavBar from './NavBar';
 
 function Departamento() {
 
     const [departamento, setDepartamento] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch('https://skojryaxbquqtwvuyhfv.supabase.co/rest/v1/departamento?select=*', {
@@ -15,7 +17,7 @@ function Departamento() {
     }, []);
 
     function editarDepartamento(id) {
-        console.log(id);
+        navigate(`/actualizar-departamento/${id}`);
     }
 
     async function eliminarDepartamento(id) {
